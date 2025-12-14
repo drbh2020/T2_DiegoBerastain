@@ -1,24 +1,271 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="T2_DiegoBerastain" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculadora de IMC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tit-le-lbl">
+                                <rect key="frame" x="20" y="100" width="353" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="tit-he-ght"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <color key="textColor" systemColor="systemBlueColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="stk-vw-001">
+                                <rect key="frame" x="40" y="200" width="313" height="226"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="peso-stk">
+                                        <rect key="frame" x="0.0" y="0.0" width="313" height="79"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peso (kg):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peso-lbl">
+                                                <rect key="frame" x="0.0" y="0.0" width="313" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresa tu peso" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="peso-txt">
+                                                <rect key="frame" x="0.0" y="28.333333333333343" width="313" height="50.666666666666657"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="peso-txt-hgt"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="est-stk">
+                                        <rect key="frame" x="0.0" y="109" width="313" height="79"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estatura (m):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="est-lbl">
+                                                <rect key="frame" x="0.0" y="0.0" width="313" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresa tu estatura (ej: 1.75)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="est-txt">
+                                                <rect key="frame" x="0.0" y="28.333333333333343" width="313" height="50.666666666666657"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="est-txt-hgt"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="calc-btn">
+                                        <rect key="frame" x="0.0" y="218" width="313" height="8"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="calc-btn-hgt"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Calcular IMC">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="calcularPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="calc-act"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingresa tus datos para calcular tu Índice de Masa Corporal" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="info-lbl">
+                                <rect key="frame" x="30" y="480" width="333" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="info-lbl-hgt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tit-le-lbl" secondAttribute="trailing" constant="20" id="tit-trail"/>
+                            <constraint firstItem="tit-le-lbl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tit-lead"/>
+                            <constraint firstItem="tit-le-lbl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="41" id="tit-top"/>
+                            <constraint firstItem="stk-vw-001" firstAttribute="top" secondItem="tit-le-lbl" secondAttribute="bottom" constant="60" id="stk-top"/>
+                            <constraint firstItem="stk-vw-001" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="stk-lead"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="stk-vw-001" secondAttribute="trailing" constant="40" id="stk-trail"/>
+                            <constraint firstItem="info-lbl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="info-lead"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="info-lbl" secondAttribute="trailing" constant="30" id="info-trail"/>
+                            <constraint firstItem="info-lbl" firstAttribute="top" secondItem="stk-vw-001" secondAttribute="bottom" constant="54" id="info-top"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="calcularButton" destination="calc-btn" id="calc-btn-out"/>
+                        <outlet property="estaturaTextField" destination="est-txt" id="est-txt-out"/>
+                        <outlet property="pesoTextField" destination="peso-txt" id="peso-txt-out"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="132" y="-27"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="res-scn">
+            <objects>
+                <viewController storyboardIdentifier="ResultViewController" id="res-vc" customClass="ResultViewController" customModule="T2_DiegoBerastain" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="res-vw">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resultado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="res-tit">
+                                <rect key="frame" x="20" y="80" width="353" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="res-tit-hgt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <color key="textColor" systemColor="systemBlueColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="res-stk">
+                                <rect key="frame" x="40" y="180" width="313" height="292"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="imc-card">
+                                        <rect key="frame" x="0.0" y="0.0" width="313" height="120"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMC: 0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imc-lbl">
+                                                <rect key="frame" x="15" y="15" width="283" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="imc-lbl-hgt"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                                <color key="textColor" systemColor="systemBlueColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categoría" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cat-lbl">
+                                                <rect key="frame" x="15" y="75" width="283" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="cat-lbl-hgt"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                <color key="textColor" systemColor="systemGreenColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="imc-lbl" firstAttribute="top" secondItem="imc-card" secondAttribute="top" constant="15" id="imc-lbl-top"/>
+                                            <constraint firstItem="imc-lbl" firstAttribute="leading" secondItem="imc-card" secondAttribute="leading" constant="15" id="imc-lbl-lead"/>
+                                            <constraint firstAttribute="trailing" secondItem="imc-lbl" secondAttribute="trailing" constant="15" id="imc-lbl-trail"/>
+                                            <constraint firstItem="cat-lbl" firstAttribute="top" secondItem="imc-lbl" secondAttribute="bottom" constant="10" id="cat-lbl-top"/>
+                                            <constraint firstItem="cat-lbl" firstAttribute="leading" secondItem="imc-card" secondAttribute="leading" constant="15" id="cat-lbl-lead"/>
+                                            <constraint firstAttribute="trailing" secondItem="cat-lbl" secondAttribute="trailing" constant="15" id="cat-lbl-trail"/>
+                                            <constraint firstAttribute="bottom" secondItem="cat-lbl" secondAttribute="bottom" constant="15" id="cat-lbl-bot"/>
+                                            <constraint firstAttribute="height" constant="120" id="imc-card-hgt"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="data-stk">
+                                        <rect key="frame" x="0.0" y="140" width="313" height="62"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peso: 0.0 kg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peso-res-lbl">
+                                                <rect key="frame" x="0.0" y="0.0" width="313" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" systemColor="systemGrayColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estatura: 0.00 m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="est-res-lbl">
+                                                <rect key="frame" x="0.0" y="30.333333333333343" width="313" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" systemColor="systemGrayColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spacer-lbl">
+                                                <rect key="frame" x="0.0" y="60.666666666666686" width="313" height="1.3333333333333144"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="volver-btn">
+                                        <rect key="frame" x="0.0" y="222" width="313" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="volver-btn-hgt"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Volver a Calcular">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="volverPressed:" destination="res-vc" eventType="touchUpInside" id="volver-act"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rangos de IMC: Bajo peso (&lt;18.5), Normal (18.5-24.9), Sobrepeso (25-29.9), Obesidad (≥30)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rangos-lbl">
+                                <rect key="frame" x="30" y="520" width="333" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="rangos-lbl-hgt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="res-safe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="res-tit" firstAttribute="leading" secondItem="res-safe" secondAttribute="leading" constant="20" id="res-tit-lead"/>
+                            <constraint firstItem="res-safe" firstAttribute="trailing" secondItem="res-tit" secondAttribute="trailing" constant="20" id="res-tit-trail"/>
+                            <constraint firstItem="res-tit" firstAttribute="top" secondItem="res-safe" secondAttribute="top" constant="21" id="res-tit-top"/>
+                            <constraint firstItem="res-stk" firstAttribute="top" secondItem="res-tit" secondAttribute="bottom" constant="60" id="res-stk-top"/>
+                            <constraint firstItem="res-stk" firstAttribute="leading" secondItem="res-safe" secondAttribute="leading" constant="40" id="res-stk-lead"/>
+                            <constraint firstItem="res-safe" firstAttribute="trailing" secondItem="res-stk" secondAttribute="trailing" constant="40" id="res-stk-trail"/>
+                            <constraint firstItem="rangos-lbl" firstAttribute="leading" secondItem="res-safe" secondAttribute="leading" constant="30" id="rangos-lead"/>
+                            <constraint firstItem="res-safe" firstAttribute="trailing" secondItem="rangos-lbl" secondAttribute="trailing" constant="30" id="rangos-trail"/>
+                            <constraint firstItem="rangos-lbl" firstAttribute="top" secondItem="res-stk" secondAttribute="bottom" constant="48" id="rangos-top"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="categoriaLabel" destination="cat-lbl" id="cat-lbl-out"/>
+                        <outlet property="estaturaLabel" destination="est-res-lbl" id="est-res-lbl-out"/>
+                        <outlet property="imcLabel" destination="imc-lbl" id="imc-lbl-out"/>
+                        <outlet property="pesoLabel" destination="peso-res-lbl" id="peso-res-lbl-out"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="res-first" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="863" y="-27"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
